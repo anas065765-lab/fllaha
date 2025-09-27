@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فلها وربك يحلها - ذبات وسماجات</title>
+    <style>
+        :root {
+            --navy: #2C3E50;
+            --beige: #F5F0E6;
+            --accent: #8B7355;
+            --text-dark: #4A4A4A;
+            --white: #FFFFFF;
+            --soft-blue: #3498DB;
+            --light-beige: #E8E2D6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Tahoma', sans-serif;
+        }
+
+        body {
+            background-color: var(--beige);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .random-memes-bar {
+            background: linear-gradient(90deg, var(--soft-blue), var(--light-beige));
+            color: var(--navy);
+            padding: 12px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        header {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--light-beige);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* إصلاح مشكلة السلايدر */
+        .products-slider {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .slider-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding: 1rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-slide {
+            flex: 0 0 calc(100% - 2rem);
+            scroll-snap-align: start;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .product-title {
+            color: var(--navy);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--navy);
+            opacity: 0.3;
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            opacity: 1;
+            background: var(--soft-blue);
+        }
+
+        button {
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .quick-order {
+            background: var(--light-beige);
+            color: var(--navy);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .product-slide {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .product-slide {
+                flex: 0 0 calc(33.333% - 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="random-memes-bar">
+        اليوم ذبت على نفسي وأنا أدور النظارة وهي على راسي! 😂
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">فلها وربك يحلها 😂</div>
+            <nav>
+                <ul>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#contact">الطلب</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="products">
+            <h2>🛍 منتجاتنا</h2>
+            
+            <div class="products-slider">
+                <div class="slider-container" id="sliderContainer">
+                    <!-- المنتج 1 -->
+                    <div class="product-slide">
+                        <div class="product-title">📚 ماوراء الأعين</div>
+                        <div class="product-description">
+                            كل قصة تأخذك إلى عالم مختلف؛ من بيوت مهجورة و منتصف الليل، إلى ظلال تتحرك من تلقاء نفسها وأسرار قديمة كان من الأفضل ألا تُكشف
+                        </div>
+                        <button onclick="orderProduct('ماوراء الأعين')">🛒 اطلب الآن</button>
+                    </div>
+                    
+                    <!-- المنتج 2 -->
+                    <div class="product-slide">
+                        <div class="product-title">🌟 غرائب عجائب</div>
+                        <div class="product-description">
+                            ليس كل القصص مخيفة او مضحكة قد تكون غريبة. قصص وعجائب من العالم تجعلك تقول "سبحان الله!"
+                        </div>
+                        <button onclick="orderProduct('غرائب عجائب')">🛒 اطلب الآن</button>
+                    </div>
+                    
+                    <!-- المنتج 3 -->
+                    <div class="product-slide">
+                        <div class="product-title">😂 سماجة سامجة مسموجة</div>
+                        <div class="product-description">
+                            سماجات تناسب كل الأذواق. نكت ومواقف مضحكة تخليك تضحك حتى على نفسك!
+                        </div>
+                        <button onclick="orderProduct('سماجة سامجة مسموجة')">🛒 اطلب الآن</button>
+                    </div>
+
+                    <!-- المنتج 4 -->
+                    <div class="product-slide">
+                        <div class="product-title">💡 أفكار نص الليل</div>
+                        <div class="product-description">
+                            مجموعة من أغرب الأفكار اللي ممكن تسمعها. أفكار تجي في منتصف الليل وتخليك تتساءل عن حياتك!
+                        </div>
+                        <button onclick="orderProduct('أفكار نص الليل')">🛒 اطلب الآن</button>
+                    </div>
+
+                    <!-- المنتج 5 -->
+                    <div class="product-slide">
+                        <div class="product-title">🔮 غريب عجيب فريد</div>
+                        <div class="product-description">
+                            أمور غريبة تحدث حول العالم وليس كل شيء له دليل او تفسير. قصص حقيقية وأحداث عجيبة تثير الدهشة والتعجب.
+                        </div>
+                        <button onclick="orderProduct('غريب عجيب فريد')">🛒 اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-order">
+                💰 جميع المنتجات بسعر 45 ليرة تركية فقط | 📞 للطلب: 538 548 12 75
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function orderProduct(productName) {
+            alert('طلب: ' + productName + '\n\nسيتم فتح الواتساب لإكمال الطلب!');
+            window.open('https://wa.me/905385481275?text=مرحباً، أريد طلب ' + productName, '_blank');
+        }
+    </script>
+</body>
+</html>
